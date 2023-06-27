@@ -1,0 +1,134 @@
+.logo{
+    display: block;
+    /* margin: auto; */
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background-color: brown;
+}
+body nav{
+    display: flex;
+}
+body nav h1{
+    text-align: center;
+    color: white;
+    margin-left: 37%;
+}
+body{
+    height: 100vh;
+    /* background-image: linear-gradient(#56CCF2,#2F80ED); */
+    background-image: url('../back.jpg');
+    width: 95vw;
+}
+.container{
+    width: 90%;
+    margin: auto;
+    height: 70vh;
+    /* border: 2px solid black; */
+    padding: 33px;
+    overflow-y: auto;
+}
+.message{
+    /* background-color: white; */
+    width: 25%;
+    padding: 3px;
+    margin: 5px;
+    border: 2px solid black;
+    color: black;
+    font-size: 18px;
+    border-radius: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.left{
+    float: left;
+    clear: both;
+    overflow-wrap: break-word;
+    background-color: #2F80ED;
+}
+.center{
+    float: inline-start;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+    border: none;
+    display: block;
+    margin-left: 5%;
+    width: 90%;
+}
+.right{
+    float: right;
+    clear: both;
+    overflow-wrap: break-word;
+    background-color: #2F80ED;
+}
+#send-container{
+    text-align: center;
+    max-width: 90%;
+    width: 80%;
+    /* background: transparent; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+#messageInp{
+    width: 60%;
+    border: 2px solid white;
+    border-radius: 6px;
+    background: transparent;
+    color: white;
+    font-size: 20px;
+    height: 34px;
+
+}
+.btn{
+    cursor: pointer;
+    border: 2px solid white;
+    border-radius: 50%;
+    height: 50px;
+    background: transparent;
+    width: 50px;
+    margin-left: 20px;
+    font-size: 30px;
+}
+
+@media only screen and (max-width:550px){
+    .logo{
+        height: 50px;
+        width: 50px;
+        float: left;
+    }
+    body nav{
+        display: inline;
+    }
+    body nav h1{
+        text-align: center;
+        color: white;
+        font-size: 15px;
+        width: 38%;
+        padding-bottom: 30px;
+        margin-left: 32%;
+    }
+    .message{
+        max-width: 60vw;
+        min-width: 30vw;
+        padding: 2px;
+        margin: 0px 1px 0px 0px;
+        border: 1px solid black;
+        color: black;
+        font-size: 13px;
+        border-radius: 8px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        overflow-wrap: break-word;
+    }
+    .center{
+        float: inline-start;
+        text-align: center;
+        color: white;
+        font-weight: 500;
+        border: none;
+        display: block;
+        margin-left: 5%;
+        width: 90%;
+    }
+}
