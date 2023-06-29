@@ -1,5 +1,5 @@
 .rest{
-    background-image: url("../back.jpg");
+    background-image: url("../bg.jpg");
     height: 94vh;
     display: flex;
     flex-direction: column;
@@ -25,7 +25,7 @@
     cursor: pointer;
     height: 20px;
     background: transparent;
-    color: rgb(225, 219, 21);
+    color: black;
     width: 20px;
     font-weight: 700;
     font-size: 25px;
@@ -36,10 +36,10 @@
 #messageInp{
     width: 85%;
     height: 100%;
-    border: 2px solid rgb(255,219,21);
+    border: 2px solid black;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: transparent;
-    color: white;
+    color: black;
     border-radius: 10px;
 }
 .message{
@@ -57,13 +57,14 @@
     float: left;
     clear: both;
     overflow-wrap: break-word;
-    background-color: #2F80ED;
+    color: white;
+    background-color: #6b7f9a;
 }
 .right{
     float: right;
     clear: both;
     overflow-wrap: break-word;
-    background-color: #2F80ED;
+    background-color: #2bc27b;
 }
 footer{
     height: 118px;
@@ -91,6 +92,15 @@ footer{
 }
 .offcanvas{
     background-image: linear-gradient(#CEB5B7,#BCBD8B);
+}
+#remove{
+    cursor: pointer;
+}
+#ok{
+    background-color: aquamarine;
+}
+#ok li{
+    margin-left: 5px;
 }
 @media only screen and (max-width:550px){
     .rest{
