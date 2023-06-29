@@ -9,7 +9,7 @@ const append = (message,position)=>{
     messageElement.classList.add('message');
     messageElement.classList.add(position);
     messageContainer.append(messageElement);
-    if(position=='left')audio.play();
+    // if(position=='left')audio.play();
 };
 form.addEventListener('submit', (e)=>{
     e.preventDefault();
@@ -17,6 +17,10 @@ form.addEventListener('submit', (e)=>{
     append(`${message}`,'right');
     socket.emit(`send`,message);
     messageInput.value = '';
+    const el = document.getElementById('chat-feed');
+    if (el) {
+        el.scrollTop = el.scrollHeight;
+    }
 });
 
 const id = prompt("Enter your name to join");
@@ -30,12 +34,46 @@ join.addEventListener('click', (e)=>{
     join.classList.add('v-class');
     show.classList.remove('v-class');
 });
-socket.on('user-joined', id=>{
+
+let ok = document.getElementById('ok');
+const active = (id)=>{
+    const element = document.createElement('li');
+    element.innerHTML = id;
+    element.setAttribute('id',id);
+    element.classList.add('active');
+    ok.append(element);
+};
+
+socket.on('user-joined',id=>{
     append(`${id} joined the chat`, 'left');
+    active(`${id}`);
+    audio.play();
 });
 socket.on('receive', data=>{
     append(`${data.id} : ${data.message}`, `left`);
+    const el = document.getElementById('chat-feed');
+    if (el) {
+        el.scrollTop = el.scrollHeight;
+    }   
+
 });
 socket.on('left', id=>{
-    append(`${id} left the chat`,`left`);
+    if(id!=null){
+        append(`${id} left the chat`,`left`);
+        let rem = document.getElementById(id);
+        rem.remove();
+        audio.play();
+    }
+});
+
+let remove = document.getElementById('remove');
+let m_body = document.getElementById('m_body');
+let confirm = document.getElementById('confirm');
+remove.addEventListener('click', ()=>{
+    let arr = Array.from(document.getElementsByClassName('right'));
+    let del = arr[arr.length - 1];
+    m_body.innerHTML = del.innerHTML;
+    confirm.addEventListener('click', ()=>{
+        del.remove();
+    });
 });
