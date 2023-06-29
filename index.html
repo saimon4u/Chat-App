@@ -35,12 +35,42 @@
                             About
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="remove" data-bs-toggle="modal" data-bs-target="#exampleModal">Remove</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Active Now
+                        </a>
+                        <ul class="dropdown-menu" id="ok" aria-labelledby="navbarDropdown">
+                          <!-- <li>Saimon</li> -->
+                        </ul>
+                    </li>
                 </ul>
                 <button class="btn btn-outline-info" type="button" id="join">Join Chat</button>
                 <button class="btn btn-info v-class" type="button" id="joined">Joined</button>
             </div>
         </div>
     </nav>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm" >
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Remove For You</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="m_body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="confirm" class="btn btn-danger" data-bs-dismiss="modal">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
     <!-- offcanvas -->
 
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
@@ -66,7 +96,7 @@
     <!-- Chat -->
 
     <div class="rest">
-        <div class="container">
+        <div class="container" id="chat-feed">
             <!-- <div class="message right">Me: Hello</div>
             <div class="message left">You: Hi</div> -->
         </div>
